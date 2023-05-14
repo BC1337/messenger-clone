@@ -79,7 +79,7 @@ const AuthForm = () => {
             onSubmit={handleSubmit(onSubmit)}
         >
             {variant === 'REGISTER' && (
-                <Input
+            <Input
                 id="name"
                 label="Name"
                 register={register}
@@ -87,7 +87,7 @@ const AuthForm = () => {
                 disabled={isLoading}
             />
             )}
-             <Input
+            <Input
                 id="email"
                 label="Email address"
                 type="email"
@@ -104,13 +104,13 @@ const AuthForm = () => {
                 disabled={isLoading}
             />
             <div>
-                <Button
-                    disabled={isLoading}
-                    fullWidth
-                    type="submit"
-                >
-                    {variant === 'LOGIN' ? 'Sign in' : 'Register'}
-                </Button>
+            <Button
+                disabled={isLoading}
+                fullWidth
+                type="submit"
+            >
+            {variant === 'LOGIN' ? 'Sign in' : 'Register'}
+            </Button>
             </div>
         </form>
 
@@ -122,7 +122,7 @@ const AuthForm = () => {
                         flex
                         items-center
                     "
-                >
+            >
                 <div className="
                         w-full
                         border-t
