@@ -1,14 +1,19 @@
-# Ignore Mac system files
-.DS_store
-
-# Ignore node_modules folder
-node_modules
-
-# Ignore all text files
-*.txt
-
-# Ignore files related to API keys
+# Prisma
 .env
+.vscode
+.DS_Store
 
-# Ignore SASS config files
-.sass-cache
+# Generated Prisma client
+/node_modules
+/prisma
+
+# Ignore all migration files in migration directory except for README.md
+/prisma/migrations/*
+!/prisma/migrations/README.md
+
+# Ignore database backups created with prisma db export
+*.tar.gz
+*.zip
+*.backup
+*.sql
+test
