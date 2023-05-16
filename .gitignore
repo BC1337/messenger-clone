@@ -3,6 +3,9 @@
 .vscode
 .DS_Store
 
+next
+.next
+/next
 # Generated Prisma client
 /node_modules
 /prisma
