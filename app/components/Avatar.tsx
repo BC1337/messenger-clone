@@ -1,6 +1,7 @@
 'use client'
 
 import { User } from "@prisma/client"
+
 import Image from "next/image"
 
 interface AvatarProps {
@@ -38,7 +39,7 @@ const Avatar: React.FC<AvatarProps> = ({
             ring-2
             ring-white
             top-0
-            ring-0
+            right-0
             h-2
             w-2
             md:h-3
