@@ -20,16 +20,54 @@ export async function POST(
 
         const newMessage = await prisma.message.create({
             data: {
-                body: message as string,
-                image: image as string,
+                body: message,
+                image: image,
                 conversation: {
                     connect: {
-                        id: conversationId as string
+                        id: conversationId
+                    }
+                },
+                sender: {
+                    connect: {
+                        id: currentUser.id
+                    }
+                },
+                seen: {
+                    connect: {
+                        id: currentUser.id
+                    }
+                }
+            },
+            include: {
+                sender: true,
+                seen: true
+            }
+        })
+
+        const updatedConversation = await prisma.conversation.update({
+            where: {
+                id: conversationId
+            },
+            data: {
+                lastMessageAt: new Date(),
+                messages: {
+                    connect: {
+                        id: newMessage.id
+                    }
+                }
+            },
+            include: {
+                users: true,
+                messages: {
+                    include: {
+                        seen: true
                     }
                 }
             }
         })
 
+
+        return NextResponse.json(newMessage)
     } catch (error: any) {
         console.error(error, 'Error_MESSAGES')
         return new NextResponse('Internal Error', { status: 500 })
