@@ -3,7 +3,7 @@
 import axios from 'axios'
 import { useCallback, useState, useEffect } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
-import Input from '@/app/components/input'
+import Input from '@/app/components/inputs/input'
 import Button from '@/app/components/Button'
 import AuthSocialButton from './AuthSocialButton'
 import { toast } from 'react-hot-toast'
